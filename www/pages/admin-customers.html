@@ -1,0 +1,37 @@
+<div ng-show="loaded" class="container-fluid">
+
+    <h2 class="page-header">Customer Management</h2>
+    <div ng-hide="showForm" style="max-height:360px;overflow:scroll">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                	<th></th>
+                    <th>Customer ID</th>
+                    <th>Domain Admin</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="customer in customers">
+                	<td><input type="checkbox" ng-model="selectedCust[customer._id]"></td>
+                    <td>{{customer._id}}</td>
+                    <td>{{customer.domain_admin}}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" ng-click="editCust(customer._id)">
+                            <span class="glyphicon glyphicon-pencil"></span>  Edit
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+    <div style="padding-top:50px">
+	<span class="col-md-3"><a ng-href="#" ng-click="editCust('new')">Configure New Customer</a></span>
+	<span class="col-md-offset-5 col-md-3"><a ng-href="#" ng-click="deleteCust()">Delete Selected Customers</a></span>
+    </div>
+</div>
+<div ng-hide="loaded" style="position:absolute;left:50%;top:50%" ng-hide="loaded" class="throbber-loader">
+    Loading ...
+</div>

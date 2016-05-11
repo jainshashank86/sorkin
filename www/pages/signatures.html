@@ -1,0 +1,77 @@
+<div class="container-fluid" ng-show="loaded">
+    <div class="page-header">
+        <h2>Signatures
+    	 <span class="small" ><a class="col-md-offset-6" ng-href="#" ng-click="editSig('new')"
+    	 	data-toggle="tooltip" data-placement="bottom" title="Create a Signature template. Please note that a single signature template can be used for multiple organization units">
+    	 	 <u>Create Template</u></a>
+		</span></h2>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-md-1">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-haspopup="true">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" ng-click="selectAll()">Select All</a></li>
+                                <li><a href="#" ng-click="unSelectAll()">Unselect All</a></li>
+                                <li><a href="#" ng-click="deleteSigs()">Delete</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th class="col-md-6 content"> Title </th>
+                    <th class="col-md-2 content"> </th>
+                    <th class="col-md-offset-2 col-md-2 content"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="signature in siglist">
+                    <td>
+                        <input type="checkbox" ng-model="selectedSigs[signature._id]">
+                    </td>
+                    <td>{{ signature.title }}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" ng-click="previewSig(signature._id,signature.body)">
+                            <span class="glyphicon glyphicon-pencil"></span>  Preview
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" ng-click="editSig(signature._id)">
+                            <span class="glyphicon glyphicon-pencil"></span>  Edit
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+    <script>
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+	</script>
+
+    <script type="text/ng-template" id="SignaturePreview.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Signature Preview</h3>
+        </div>
+        <div class="modal-body">
+            <div ng-bind-html="previewData"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+        </div>
+    </script>
+
+    <div ng-show="false" style="padding-top:50px">
+        <span><a ng-href="#" ng-click="editSig('new')">Create New Signature</a></span>
+        <span class="col-md-offset-6"><a ng-href="#" ng-click="deleteSigs()">Delete Selected Signatures</a></span>
+    </div>
+
+</div>
+<div ng-hide="loaded" style="position:absolute;left:50%;top:50%" ng-hide="loaded" class="throbber-loader">
+    Loading ...
+</div>

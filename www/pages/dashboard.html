@@ -1,0 +1,55 @@
+<div ng-show="loaded" class="container-fluid" ng-init="showOrgs = false ; showDays = true ;">
+    <h2 class="page-header">Dashboard</h2>
+
+<div>
+	<mark>Last 48 hours summary</mark>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+				<th>Remark</th>
+				<th>Started since</th>
+				<th>Status</th>
+				<th>Completion time</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="summary in summaries">
+				<td>{{summary.remark}}</td>
+				<td>{{summary.started_since}} ago </td>
+				<td style="text-transform:capitalize">{{summary.status}}</td>
+				<td>{{summary.completion_time}}</td>
+			</tr>
+			</tbody>
+		</table>
+</div>
+
+<!--
+		 <div google-chart chart="chart" style="{{chart.cssStyle}}"></div>
+		 <br>
+		 	<div  style="max-height:360px;overflow:scroll;">
+		 	<mark>In Progress Tasks</mark>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+				<th>Remark</th>
+				<th>Time since started</th>
+				<th>State</th>
+
+				</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="summary in inProgressTasks">
+				<td>{{summary.remark}}</td>
+				<td>{{summary.time_since}} ago</td>
+				<td style="text-transform:capitalize">{{summary.status}}</td>
+
+			</tr>
+			</tbody>
+		</table>
+		</div>  -->
+</div>
+
+
+<div ng-hide="loaded" style="position:absolute;left:50%;top:50%" ng-hide="loaded" class="throbber-loader">
+    Loading ...
+</div>

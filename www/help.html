@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>novaSignature</title>
+  <meta charset="utf-8">
+
+		<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/1.1.3/metisMenu.min.css" rel="stylesheet">
+
+		<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href='//fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+		<link href="/css/novasignature.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 style="text-align:center">novaSignature</h1>
+  </div>
+  <div class="row">
+      <h3>Prerequisites </h3>
+	<ul>
+	<li>In Admin console give access to service account</li>
+	<li>Org Unit name should not contain apostrophe or any other special characters </li>
+	<li>Make sure you are logged in as domain admin</li>
+	<li>Upload images that you will be using in the signature. (Optional)</li>
+	</ul>
+
+    </div>
+    <div class="row">
+      <h3> Main pages in novaSignature </h3>
+	<ul>
+	<li><mark><b>Dashboard: </b></mark>Showing statistics of the tool, failure/success in last 7 days. Searchable error logs. Also track progress of Rule application (Status: In Progress, Completed). Dashboard is refreshed from time to time, please wait for few moments to see the changes.  </li>
+	<li><mark><b>Images: </b></mark> Upload your images in GCS, that can later be used to insert in signature. </li>
+	<li><mark><b>Signatures: </b></mark> Signature templates that can be applied. </li>
+	<li><mark><b>Rules: </b></mark> Rules dictate in which org units signature will be applied. All the updates will happen according to rules, individual user signature update is not supported.  </li>
+	</ul>
+    </div>
+    <hr>
+    <div class="row">
+      <h3><u> Steps to use the tool</u> </h3>
+	<div style="margin-top:30px">
+	<h4><mark><strong>Create/edit signature templates:</strong></mark></h4> This is the page to create/edit signatures. Please create/edit signatures before moving on to Rules page.
+	<p></p>
+	<ul>
+	<li>You can insert all kind of attributes  (name, office number, mobile number) and formatting that will be applied to the signature. </li>
+	<li>You can insert image from GCS or paste the link.</li>
+	<li>You can insert youtube link that will also show preview (make sure to use shareable link).</li>
+	<li>Once you save the signature you can move to rules page.</li>
+	<li>Also, from Signature page you can see preview of how signature is going to look. </li>
+	</ul>
+
+	<h4><mark><strong>Create/edit Rules templates: </strong></mark></h4> Please create/edit/review signature before this step. This is the page to apply signature to an org unit.
+	<p></p>
+	<ul>
+	<li> You can either apply existing rule or create/edit. </li>
+	<li> You have to select Org Unit for which you want signature to be applied. You can select either one or more org units.</li>
+	<li> Next, select the signature template that you want to apply.</li>
+	<li> After saving or creating a rule you have to hit apply to start the process.</li>
+	<li> Track progress on Dashboard. It will show if the process is ‘In Progress’ or it is ‘Completed’. On an average, 10 users are processed per second.So,you can expect completion time accordingly. </li>
+	</ul>
+	<hr>
+	</div>
+    </div>
+
+</div>
+</body>
+</html>

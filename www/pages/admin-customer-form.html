@@ -1,0 +1,45 @@
+<div class="container-fluid">
+
+    <div style="background-color:	#EBEBE6">
+        <br>
+        <h3 ng-show="edit" style="padding-left:30px"><b>Configure New Customer:</b></h3>
+        <h3 ng-hide="edit" style="padding-left:30px"><b>Edit Customer:</b></h3>
+        <br>
+        <form class="form-horizontal">
+            <br>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Customer Id:</label>
+                <div class="col-sm-2">
+                    <input class="form-control input-xs" id="custid" type="text" ng-model="custid">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Admin Id:</label>
+                <div class="col-sm-3">
+                    <input class="form-control input-xs" id="adminId" type="text" ng-model="adminId">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div style="padding-left:20px" ng-show="alert.show">
+                <alert type="{{alert.type}}" close="closeAlert($index)" style="width:40%;">{{alert.msg}}</alert>
+            </div>
+            <br>
+            <div class="form-group">
+                <div style="padding-left:50px" class="col-sm-2">
+                    <button class="btn btn-primary" ng-click="saveCustomer()">
+                        <span></span>  Configure
+                    </button>
+                </div>
+
+                <div class="col-sm-offset-6 col-sm-2">
+                    <button class="btn btn-primary" ng-click="backMain()">
+                        <span></span>  Back
+                    </button>
+                </div>
+            </div>
+        </form>
+        <hr>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="container-fluid" ng-show="loaded">
+
+    <h2 class="page-header">Images</h2>
+
+    <form class="form-horizontal"  enctype="multipart/form-data" ng-submit="upload()">  <!--  action={{url}}  method="post">-->
+        <div class="form-group">
+        	<input id="file-0" type="file" file-model="ImageFile" data-preview-file-type="text">
+           <!-- <label class="col-sm-4  control-label">Upload Image File:</label>
+            <input class="col-sm-8" type="file" name="file" id="file" file-model="ImageFile"/>
+            <br>
+             -->
+        </div>
+        <br>
+<!--         <div class="form-group"> -->
+<!--             <input class="col-sm-4" type="submit" value="Upload" ng-click="upload()"> -->
+<!--         </div> -->
+
+    </form>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-4" ng-repeat="image in imgList"  style="width:300px;height:300px">
+            <table>
+                <tr>
+                	<td>
+                    <a href={{image.url}} class="thumbnail">
+                        <img src={{image.url}} alt="novaSig" style="width:225px;height:225px">
+                    </a>
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                <script>
+					$(function () {
+	  					$('[data-toggle="tooltip"]').tooltip()
+					})
+				</script>
+				<a href="" ng-click="showUrl=!showUrl" data-toggle="tooltip" data-placement="bottom"
+                		title="View and copy the image URL to include in your signature template."> View Image URL</a>
+                	<a href="" ng-click="deleteImage(image.imageid)" style="margin-left:120px" data-toggle="tooltip" data-placement="bottom" title="Deletion cannot be undone !!">Delete</a>
+                </td>
+                </tr>
+                <tr> <td>
+                    <input ng-show="showUrl" type="text" readonly="readonly" value={{image.url}}>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+		<script>
+
+   /* $('#file-fr').fileinput({
+        language: 'fr',
+        uploadUrl: '#',
+        allowedFileExtensions : ['jpg', 'png','gif','jpeg'],
+    }); */
+   /* $('#file-es').fileinput({
+        language: 'es',
+        uploadUrl: '#',
+        allowedFileExtensions : ['jpg', 'png','gif','jpeg'],
+    }); */
+    $("#file-0").fileinput({
+        'allowedFileExtensions' : ['jpg', 'png','gif','jpeg'],
+    });
+   /* $("#file-1").fileinput({
+        uploadUrl: '#', // you must set a valid URL here else you will get an error
+        allowedFileExtensions : ['jpg', 'png','gif','jpeg'],
+        overwriteInitial: false,
+        maxFileSize: 1000,
+        maxFilesNum: 10,
+        //allowedFileTypes: ['image', 'video', 'flash'],
+        slugCallback: function(filename) {
+            return filename.replace('(', '_').replace(']', '_');
+        }
+	}); */
+    /*
+    $(".file").on('fileselect', function(event, n, l) {
+        alert('File Selected. Name: ' + l + ', Num: ' + n);
+    });
+    */
+	/* $("#file-3").fileinput({
+		showUpload: false,
+		showCaption: false,
+		browseClass: "btn btn-primary btn-lg",
+		fileType: "any",
+        previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
+	}); */
+	/* $("#file-4").fileinput({
+		uploadExtraData: {kvId: '10'}
+	}); */
+    $(".btn-warning").on('click', function() {
+        if ($('#file-4').attr('disabled')) {
+            $('#file-4').fileinput('enable');
+        } else {
+            $('#file-4').fileinput('disable');
+        }
+    });
+    $(".btn-info").on('click', function() {
+        $('#file-4').fileinput('refresh', {previewClass:'bg-info'});
+    });
+    $(document).ready(function() {
+        $("#test-upload").fileinput({
+            'showPreview' : false,
+            'allowedFileExtensions' : ['jpg', 'png','gif'],
+            'elErrorContainer': '#errorBlock'
+        });
+        /*
+        $("#test-upload").on('fileloaded', function(event, file, previewId, index) {
+            alert('i = ' + index + ', id = ' + previewId + ', file = ' + file.name);
+        });
+        */
+    });
+	</script>
+
+</div>
+
+<div ng-hide="loaded" style="position:absolute;left:50%;top:50%" ng-hide="loaded" class="throbber-loader">
+    Loading ...
+</div>
