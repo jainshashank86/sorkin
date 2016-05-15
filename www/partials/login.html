@@ -1,0 +1,80 @@
+<div>
+    <div id="page-inner">
+    	<div class="row">
+            <div class="col-md-12 page-title">
+    			<h1>Setting</h1>
+    		</div>
+    	</div>
+    	<hr>
+		<div class="form">
+		  <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
+		  <form class="register-form" ng-show="showsignup">
+		    <input type="text" placeholder="name" ng-model="userName"/>
+		    <input type="password" placeholder="password" ng-model="password"/>
+		    <input type="text" placeholder="email address" ng-model="email" />
+		    <button ng-click="saveUser()">create</button>
+		    <p class="message">Already registered? <a ng-click="signin()">Sign In</a></p>
+		  </form>
+		  <form class="login-form" ng-show="!showsignup">
+		    <input type="text" placeholder="username"/>
+		    <input type="password" placeholder="password"/>
+		    <button>login</button>
+		    <p class="message">Not registered? <a ng-click="signup()">Create an account</a></p>
+		  </form>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="container-fluid">
+	<form name="loginForm">
+		<div class="login-form">
+		  <div class="row login-row">
+		  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><h1>Login</h1></div>
+		  </div>
+		  <div class="row login-row">
+		  	<div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-8 col-md-8 col-lg-8 margin-set">
+		  		<input type="text" class="form-control" id="usr" placeholder="email" ng-model="id">
+		  	</div>
+		  </div>
+		  <div class="row login-row">
+		  	<div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-8 col-md-8 col-lg-8 margin-set">
+		  		<input type="password" class="form-control" id="pass" placeholder="password" ng-model="pass">
+		  	</div>
+		  </div>
+		  <div class="row login-row">
+		  	<div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		  		<button type="button" class="btn btn-primary margin-set" ng-click="validateUser()">Submit</button>
+		  	</div>
+		  </div>
+		</div>
+	</form>
+</div> -->
+
+<!-- <div><h2>Login page</h2></div>
+
+<div class="container">
+  <div class="info">
+    <h1>Login</h1>
+  </div>
+</div>
+<div class="form">
+  <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
+  <form class="register-form">
+    <input type="text" placeholder="name"/>
+    <input type="password" placeholder="password"/>
+    <input type="text" placeholder="email address"/>
+    <button>create</button>
+    <p class="message">Already registered? <a href="#">Sign In</a></p>
+  </form>
+  <form class="login-form">
+    <input type="text" placeholder="username"/>
+    <input type="password" placeholder="password"/>
+    <button>login</button>
+    <p class="message">Not registered? <a href="#">Create an account</a></p>
+  </form>
+</div> -->
+<!-- <div class="bs-example">
+	<span class="setBox"><h4>Personal Banking</h4></span>
+	<span class="setBox"><h5>Accounts & Deposits</h5></span>
+	<span class="setBox">Enjoy a wide range of accounts designed to fit all your banking needs. So whether it is drawing cheques, withdrawing cash or booking term deposits, Barclays provides you a convenient way to access your account.</span>
+</div> -->

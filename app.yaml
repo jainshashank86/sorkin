@@ -1,5 +1,5 @@
-application: sorkin-signature
-version: 15
+application: intense-howl-790
+version: sorkin
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -24,10 +24,10 @@ handlers:
   upload: www/panel.html
   login: required
 
-
 - url: /
   static_files: www/index.html
   upload: www/index.html
+
 
 - url: /
   static_dir: www
