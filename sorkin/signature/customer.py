@@ -5,6 +5,9 @@ import logging
 import sorkin
 import sorkin.signature
 import webapp2
+from google.appengine.api import mail
+from google.appengine.api import app_identity
+import random
 
 
 
@@ -79,7 +82,21 @@ class CustomerApi(RequestHandler):
     def post(self,username):
         """ to update customer details """
 
+        logging.info('Inside post')
+
         submission = self.load()
+
+        logging.info(submission)
+
+
+        hash = str(random.getrandbits(32))
+
+        logging.info(hash)
+
+
+        submission['hashKey'] = hash
+
+        submission['authenticated'] = False
 
         logging.info(submission)
 
@@ -88,10 +105,66 @@ class CustomerApi(RequestHandler):
         customer.populate(**submission)
         customer.put()
 
-        self.respond(customer)
+        sender_address = 'intense-howl-790@appspot.gserviceaccount.com'.format(app_identity.get_application_id())  #'intense-howl-790@appspot.gserviceaccount.com'
+        logging.info(sender_address);
+        message = mail.EmailMessage(
+        sender=sender_address,
+        subject="Your account has been approved")
+
+        urlStr = 'https://sorkin-dot-intense-howl-790.appspot.com/a/customer/' +  username + '/authenticate/' + hash;
+
+        message.to = submission['email']
+
+        message.body = """Dear Shashank:
 
 
 
+        Your example.com account has been approved.  You can now visit
+        http://www.example.com/ and sign in using your Google Account to
+        access new features.
+
+        Please let us know if you have any questions.
+
+        T        he example.com Team
+        """ +  urlStr
+
+        message.send()
+
+
+
+        self.respond_ok()
+
+
+
+class CustomerAuthenticateApi(RequestHandler):
+
+    def get(self,username,hashkey):
+
+        #submission = self.load()
+
+        logging.info('Inside  verify')
+        #logging.info(submission)
+
+        key = ndb.Key(Credentials, username)
+
+        user = key.get()
+
+        if not user:
+            self.error('Invalid user', status = 404)
+            return
+
+        logging.info(user)
+        logging.info(user.username)
+        logging.info(user.hashKey)
+
+
+        if (user.hashKey == hashkey) :
+            #self.error('Invalid user', status = 404)
+            user.authenticated = True
+            user.put()
+
+
+        self.respond(user)
 
 
 

@@ -8,6 +8,7 @@ from sorkin.signature.test import *
 wsgi = webapp2.WSGIApplication([
     webapp2.Route(r'/a/customer/<username>', CustomerApi),
     webapp2.Route(r'/a/customer/<username>/verify', CustomerVerifyApi),
+    webapp2.Route(r'/a/customer/<username>/authenticate/<hashkey>', CustomerAuthenticateApi),
     webapp2.Route(r'/a/test', TestApi),
  ], debug = True)
 

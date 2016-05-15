@@ -11,6 +11,9 @@ class Credentials(ndb.Model):
     password = ndb.StringProperty(required = True)
     created = ndb.DateTimeProperty(auto_now_add = True)
     first_name =  ndb.StringProperty(required = True)
+    hashKey =  ndb.StringProperty()
+    authenticated = ndb.BooleanProperty()
+    email = ndb.StringProperty(required = True)
 
 
 # class DailyTasks(ndb.model):
