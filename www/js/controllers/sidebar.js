@@ -1,16 +1,10 @@
 var performAccel = angular.module('performAccel');
 
-performAccel.controller('sidebarCtrl', function ($scope, $location, $http, statusService, $window,getUserData) {
+performAccel.controller('sidebarCtrl', function ($scope, $location, $http, statusService, $window) {
 
-	getUserData.getData()
-        .then(function(resp) {
-        	console.log('Called sesion service');
-        	console.log(resp);
-        	$scope.userName = resp.first_name;
-
-
-
-        });
-
+        	$scope.logout = function(){
+        		$.jStorage.deleteKey("Sorkin_Session");
+        		window.location.assign('/#login');
+        	};
 
 });
