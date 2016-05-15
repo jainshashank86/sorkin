@@ -6,8 +6,6 @@ performAccel.controller('homeCtrl', function ($scope, $location, $http, statusSe
         .then(function(resp) {
         	console.log('Called sesion service');
         	console.log(resp);
-
-
         	$scope.userName = resp.first_name;
 
 

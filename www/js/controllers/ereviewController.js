@@ -1,6 +1,16 @@
 var performAccel = angular.module('performAccel');
 
-performAccel.controller('ereviewCtrl', function ($scope, $location, $http, statusService) {
+performAccel.controller('ereviewCtrl', function ($scope, $location, $http, statusService,getUserData) {
+
+
+
+	getUserData.getData()
+    .then(function(resp) {
+    	console.log('Called sesion service');
+    	console.log(resp);
+    	$scope.userName = resp.first_name;
+
+
 	$scope.activate = true;
 	// to do stuff
 
@@ -10,4 +20,6 @@ performAccel.controller('ereviewCtrl', function ($scope, $location, $http, statu
 		$location.path("/home");
 
 	}
+
+    });
 });

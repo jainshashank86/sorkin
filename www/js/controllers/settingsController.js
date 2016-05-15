@@ -1,6 +1,17 @@
 var performAccel = angular.module('performAccel');
 
-performAccel.controller('settingsCtrl', function ($scope, $location, $http, $anchorScroll, $window) {
+performAccel.controller('settingsCtrl', function ($scope, $location, $http, $anchorScroll, $window,getUserData) {
+
+
+	getUserData.getData()
+    .then(function(resp) {
+    	console.log('Called sesion service');
+    	console.log(resp);
+    	$scope.userName = resp.first_name;
+
+
+
+
 	$scope.activate = true;
 	$scope.showProfile=false;
 	$scope.showinviteRater=false;
@@ -63,4 +74,6 @@ performAccel.controller('settingsCtrl', function ($scope, $location, $http, $anc
   //     	}
 
 	}
+
+    });
 });

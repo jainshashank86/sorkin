@@ -1,8 +1,19 @@
 var performAccel = angular.module('performAccel');
 
-performAccel.controller('reportsCtrl', function ($scope, $location, $http) {
+performAccel.controller('reportsCtrl', function ($scope, $location, $http,getUserData) {
+
+
+	getUserData.getData()
+    .then(function(resp) {
+    	console.log('Called sesion service');
+    	console.log(resp);
+    	$scope.userName = resp.first_name;
+
+
 	$scope.activate = true;
 	// to do stuff
+
+    });
 
 });
 
@@ -98,7 +109,7 @@ performAccel.directive('multiline', function () {
 
 
 
-                    
+
 
                     vis.append("svg:g")
                         .attr("class", "x axis")
