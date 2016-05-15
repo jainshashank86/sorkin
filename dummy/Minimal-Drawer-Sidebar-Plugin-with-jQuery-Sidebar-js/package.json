@@ -1,0 +1,27 @@
+{
+  "name": "jquery-sidebar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demo.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cooolinho/jQuery-sidebar.git"
+  },
+  "keywords": [
+    "jquery"
+  ],
+  "author": "Colin Deepe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cooolinho/jQuery-sidebar/issues"
+  },
+  "homepage": "https://github.com/cooolinho/jQuery-sidebar#readme",
+  "dependencies": {
+    "browserify": "^12.0.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.3",
+    "requirejs": "^2.1.22"
+  }
+}

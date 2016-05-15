@@ -11,7 +11,7 @@ performAccel.service('getUserData', function($http, $q) {
             console.log('Yes, retrieved from Cache');
             d.resolve(userData);
         } else {
-        	window.location.assign('/login');
+        	window.location.assign('/#login');
 /*                    $.jStorage.set("Sorkin_Session", response);
                     $.jStorage.setTTL("Sorkin_Session" + compName, 100 * 60 * 1000);
                     d.resolve(response);*/

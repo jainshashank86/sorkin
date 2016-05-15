@@ -6,6 +6,5 @@
 GoogleAppEnginePipeline
 google-api-python-client
 gdata
-pystache
 GoogleAppEngineCloudStorageClient
 jinja2

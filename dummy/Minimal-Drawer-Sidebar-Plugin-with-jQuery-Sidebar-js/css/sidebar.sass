@@ -1,0 +1,99 @@
+// @author Colin Deepe.
+
+// Licensed under the MIT license:
+// http://www.opensource.org/licenses/mit-license.php
+
+// Sidebar
+//
+$sidebarContentWidth: 350px
+$sidebarContentHeight: 450px
+$color: #014288
+$transition: 0.5s
+
+#sidebar
+    position: fixed
+    top: 40%
+    -webkit-transition: all $transition
+    transition: all $transition
+
+    &[data-position="right"]
+        right: -$sidebarContentWidth
+
+        &.open
+            -webkit-transform: translate3d(-$sidebarContentWidth, 0, 0)
+            transform: translate3d(-$sidebarContentWidth, 0, 0)
+
+        .icons
+            float: left
+
+    &[data-position="left"]
+        left: -$sidebarContentWidth
+
+        &.open
+            -webkit-transform: translate3d($sidebarContentWidth, 0, 0)
+            transform: translate3d($sidebarContentWidth, 0, 0)
+
+        .icons
+            float: right
+
+    .icons
+        width: 50px
+        float: left
+        min-height: 1px
+
+        .icon
+            background-color: grey
+            margin-bottom: 5px
+
+            &:hover
+                background-color: $color
+
+            &:last-child
+                margin-bottom: 0px
+
+            &.active
+                background-color: $color
+
+            span
+                margin: 0.34em
+                color: white
+                font-size: 1.5em
+
+            img
+                width: 40px
+                margin: 5px
+
+    .contents
+        width: $sidebarContentWidth
+        height: $sidebarContentHeight
+        float: left
+        background-color: $color
+        overflow-y: auto
+        overflow-x: hidden
+
+        .content
+            padding: 5px 25px 25px 25px
+            color: white
+
+            &.hide
+                display: none
+
+            &.show
+                display: block
+
+            h3
+                color: white
+
+            ul
+                list-style-type: none
+                padding: 0
+                margin-top: 10px
+
+                li
+                    margin-bottom: 15px
+
+                    &:last-child
+                        margin-bottom: 0px
+
+            img
+                max-width: 100%
