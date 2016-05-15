@@ -1,18 +1,77 @@
-<div>
+<nav class="navbar navbar-default navbar-cls-top" role="navigation" style="margin-bottom: 0">
+	<div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">
+		<!-- <a href="#/login" class="btn btn-danger square-btn-adjust" ng-click="logout()" data-target="#myModal">Login</a> -->
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Login</button>
+	</div>
+</nav>
+
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header1">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+      </div>
+      <div class="modal-body11">
+        <div>
+		    <div>
+		    	<div class="row">
+		            <div class="col-md-12 page-title">
+		    			<h1>Login</h1>
+		    		</div>
+		    	</div>
+		    	<hr>
+				<div class="form">
+				  <div class="thumbnail"><img src="assets/img/hat.svg"/></div>
+				  <form class="register-form" ng-show="showsignup">
+				    <input type="text" class="textbox" id="fname" placeholder="First name" ng-model="fname"/>
+				    <input type="text" class="textbox" id="lname" placeholder="Last name" ng-model="lname"/>
+				    <input type="text" class="textbox" id="company" placeholder="Company" ng-model="company"/>
+				    <input type="text" class="textbox" id="role" placeholder="Role" ng-model="role"/>
+				    <input type="password" class="textbox" id="pass" placeholder="password" ng-model="password"/>
+				    <input type="password" class="textbox" id="cpass" placeholder="Confim password" ng-model="cpassword"/>
+				    <input type="email" class="textbox" id="login" placeholder="email" ng-model="email"/>
+				    <button ng-click="saveUser()">create</button>
+				    <p class="message">Already registered? <a >Sign In</a></p>
+				  </form>
+				  <form class="login-form" ng-show="!showsignup">
+				    <input type="text" class="textbox" id="login" placeholder="username" ng-model="username"/>
+				    <input type="password" class="textbox" id="pass" placeholder="password" ng-model="password"/>
+				    <button ng-click="signin()">login</button>
+				    <p class="message">Not registered? <a ng-click="showsignup = true">Create an account</a></p>
+				  </form>
+				</div>
+			</div>
+		</div>
+
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- <div>
     <div id="page-inner">
     	<div class="row">
             <div class="col-md-12 page-title">
-    			<h1>Setting</h1>
+    			<h1>Login</h1>
     		</div>
     	</div>
     	<hr>
 		<div class="form">
 		  <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
 		  <form class="register-form" ng-show="showsignup">
-		    <input type="text" placeholder="name" ng-model="userName"/>
-		    <input type="password" placeholder="password" ng-model="password"/>
-		    <input type="text" placeholder="email address" ng-model="email" />
-		    <button ng-click="saveUser()">create</button>
+		    <input type="text" placeholder="name"/>
+		    <input type="password" placeholder="password"/>
+		    <input type="text" placeholder="email address"/>
+		    <button>create</button>
 		    <p class="message">Already registered? <a ng-click="signin()">Sign In</a></p>
 		  </form>
 		  <form class="login-form" ng-show="!showsignup">
@@ -24,57 +83,4 @@
 		</div>
 	</div>
 </div>
-
-<!-- <div class="container-fluid">
-	<form name="loginForm">
-		<div class="login-form">
-		  <div class="row login-row">
-		  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><h1>Login</h1></div>
-		  </div>
-		  <div class="row login-row">
-		  	<div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-8 col-md-8 col-lg-8 margin-set">
-		  		<input type="text" class="form-control" id="usr" placeholder="email" ng-model="id">
-		  	</div>
-		  </div>
-		  <div class="row login-row">
-		  	<div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-8 col-md-8 col-lg-8 margin-set">
-		  		<input type="password" class="form-control" id="pass" placeholder="password" ng-model="pass">
-		  	</div>
-		  </div>
-		  <div class="row login-row">
-		  	<div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		  		<button type="button" class="btn btn-primary margin-set" ng-click="validateUser()">Submit</button>
-		  	</div>
-		  </div>
-		</div>
-	</form>
-</div> -->
-
-<!-- <div><h2>Login page</h2></div>
-
-<div class="container">
-  <div class="info">
-    <h1>Login</h1>
-  </div>
-</div>
-<div class="form">
-  <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
-  <form class="register-form">
-    <input type="text" placeholder="name"/>
-    <input type="password" placeholder="password"/>
-    <input type="text" placeholder="email address"/>
-    <button>create</button>
-    <p class="message">Already registered? <a href="#">Sign In</a></p>
-  </form>
-  <form class="login-form">
-    <input type="text" placeholder="username"/>
-    <input type="password" placeholder="password"/>
-    <button>login</button>
-    <p class="message">Not registered? <a href="#">Create an account</a></p>
-  </form>
-</div> -->
-<!-- <div class="bs-example">
-	<span class="setBox"><h4>Personal Banking</h4></span>
-	<span class="setBox"><h5>Accounts & Deposits</h5></span>
-	<span class="setBox">Enjoy a wide range of accounts designed to fit all your banking needs. So whether it is drawing cheques, withdrawing cash or booking term deposits, Barclays provides you a convenient way to access your account.</span>
-</div> -->
+ -->

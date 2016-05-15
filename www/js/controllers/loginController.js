@@ -12,7 +12,7 @@ performAccel.controller('loginCtrl', function ($scope, $location, $http) {
 
 		signupUrl = '/a/customer/' + $scope.email;
 
-		subData = {'username' : $scope.userName  , 'password' : $scope.password , 'first_name' : 'Sachin' , 'email': $scope.email}
+		subData = {'email' : $scope.email  , 'password' : $scope.password ,  'role' : $scope.role,'company' : $scope.company, 'first_name' : $scope.fname , 'last_name' : $scope.lname}
 
         $http.post(signupUrl, subData).success(function(data, status, headers, config) {
         	console.log('Success');
@@ -21,7 +21,6 @@ performAccel.controller('loginCtrl', function ($scope, $location, $http) {
         .error(function(data, status, headers, config) {
         	console.log('Errored')
         });
-
 	};
 
 	$scope.signup = function() {
@@ -29,35 +28,45 @@ performAccel.controller('loginCtrl', function ($scope, $location, $http) {
 		console.log('Signup page')
 
 
-
-
 	}
 	$scope.signin = function() {
+		console.log('login')
 		$scope.showsignup = false;
+		$scope.validateUser();
 	}
 
 	$scope.validateUser = function() {
-		if($scope.id != "" || $scope.pass != null){
+
+		console.log('Validating ...')
+
+		if($scope.username != "" || $scope.password != null) {
+
+			console.log('Inside');
 
 			var subData = {
-			"id":$scope.id,
-			"pass":$scope.pass
+			"username":$scope.username,
+			"password":$scope.password
 			};
 
-			$http.post('/authenticate', subData).success(function(data) {
+			console.log('Calling URL');
+			$http.put('/a/customer/' + $scope.username + '/verify', subData).success(function(data) {
 				$scope.response = data;
-				console.log($scope.response.status);
-				if ($scope.response.status) {
-					$scope.activate = false;
-					$location.path("/home");
-					//$scope.user = $scope.id;
-					//mySessionService.user=$scope.reponse.user;
+				console.log('After verifying user pass');
 
-			    	//$rootScope.$broadcast('logInUser');
-				} else {
-					alert('incorrect id or password');
-				}
-			});
+				 console.log('Success');
+				 $.jStorage.set("Sorkin_Session", data);
+                 $.jStorage.setTTL("Sorkin_Session", 24 * 60 * 60 * 1000);
+
+				window.location.assign('/');
+
+			})
+			.error(function(data){
+
+				console.log(data);
+				alert(data.message);
+				console.log('Ohh error in calling URL');
+			})
+
 		}
 	}
 

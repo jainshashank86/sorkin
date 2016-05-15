@@ -17,50 +17,10 @@
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
-<body class="preload">
-    <div id="wrapper">
-        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><span>Performance</span><span> Accelerator</span></a>
-            </div>
-  <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
-        </nav>
-           <!-- /. NAV TOP  -->
-                <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-				<li class="text-center">
-                    <img src="assets/img/find_user.png" class="user-image img-responsive"/>
-					</li>
+<body ng-controller="indexCtrl">
 
+    <div ng-view></div>
 
-                    <li>
-                        <a class="active-menu" href="#/home"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
-                    </li>
-					<li>
-                        <a href="#/reports"><i class="fa fa-bar-chart-o fa-3x"></i> Reports</a>
-                    </li>
-                    <li>
-                        <a href="#/settings"><i class="fa fa-desktop fa-3x"></i> Settings</a>
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-        <!-- /. NAV SIDE  -->
-        <div class="content" id="page-wrapper" ng-view>
-        </div>
-    </div>
-     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="assets/js/jquery-1.10.2.js"></script>
@@ -69,7 +29,11 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/controllers/indexCtrl.js"></script>
+
     <script src="js/services/statusCheck.js"></script>
+     <script src="js/services/session.js"></script>
+
     <script src="js/controllers/homeController.js"></script>
     <script src="js/controllers/ereviewController.js"></script>
     <script src="js/controllers/mpreviewController.js"></script>
@@ -84,6 +48,9 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="
     <script src="assets/js/morris/morris.js"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jStorage/0.4.12/jstorage.js"></script>
 
 
 </body>

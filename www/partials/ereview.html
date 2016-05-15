@@ -1,102 +1,105 @@
-<div>
-    <div id="page-inner">
-    	<div class="row">
-            <div class="col-md-12 page-title">
-    			<h1>Evening review</h1>
-    		</div>
-    	</div>
-    	<hr>
+<div id="wrapper">
+    <div ng-include="'partials/sidebar-template.html'"></div>
+        <div class="content animated bounceInUp" id="page-wrapper">
+            <div id="page-inner">
+            	<div class="row">
+                    <div class="col-md-12 page-title">
+            			<h1>Evening review</h1>
+            		</div>
+            	</div>
+            	<hr>
 
-    	<div class="row">
-            <div class="col-md-12 sub-heading">
-    			<h3>GAIN EXECUTIVE TRUST</h3>
-    		</div>
-    	</div>
-    	<div class="row">
-            <div class="col-md-10 col-sm-10 col-xs-10 para-option">
-    			<h3>Cross Functional Influence</h3>
-    		</div>
-    		<div class="col-md-2 col-sm-2 col-xs-2 tick-icon">
-    			<span class="">
-                    <i class="fa fa-envelope-tick"></i>
-                </span>
-    		</div>
-    	</div>
+            	<div class="row">
+                    <div class="col-md-12 sub-heading">
+            			<h3>GAIN EXECUTIVE TRUST</h3>
+            		</div>
+            	</div>
+            	<div class="row">
+                    <div class="col-md-10 col-sm-10 col-xs-10 para-option">
+            			<h3>Cross Functional Influence</h3>
+            		</div>
+            		<div class="col-md-2 col-sm-2 col-xs-2 tick-icon">
+            			<span class="">
+                            <i class="fa fa-envelope-tick"></i>
+                        </span>
+            		</div>
+            	</div>
 
-    	<div class="row">
-    		<div class="col-md-10 col-sm-10 col-xs-10 para-option">
-    			<h3>Develop Executive Level Relationships</h3>
-    		</div>
-    		<div class="col-md-2 col-sm-2 col-xs-2 tick-icon">
-    			<span class="">
-                    <i class="fa fa-envelope-tick"></i>
-                </span>
-    		</div>
-    	</div>
+            	<div class="row">
+            		<div class="col-md-10 col-sm-10 col-xs-10 para-option">
+            			<h3>Develop Executive Level Relationships</h3>
+            		</div>
+            		<div class="col-md-2 col-sm-2 col-xs-2 tick-icon">
+            			<span class="">
+                            <i class="fa fa-envelope-tick"></i>
+                        </span>
+            		</div>
+            	</div>
 
-    	<div class="row">
-            <div class="col-md-12 sub-heading">
-    			<h3>Increase Retention</h3>
-    		</div>
-    	</div>
-    	<div class="row">
-            <div class="col-md-10 col-sm-10 col-xs-10 para-option">
-    			<h3>Inspire Trust</h3>
-    		</div>
-    		<div class="col-md-2 col-sm-2 col-xs-2 tick-icon">
-    			<span class="">
-                    <i class="fa fa-envelope-tick"></i>
-                </span>
-    		</div>
-    	</div>
+            	<div class="row">
+                    <div class="col-md-12 sub-heading">
+            			<h3>Increase Retention</h3>
+            		</div>
+            	</div>
+            	<div class="row">
+                    <div class="col-md-10 col-sm-10 col-xs-10 para-option">
+            			<h3>Inspire Trust</h3>
+            		</div>
+            		<div class="col-md-2 col-sm-2 col-xs-2 tick-icon">
+            			<span class="">
+                            <i class="fa fa-envelope-tick"></i>
+                        </span>
+            		</div>
+            	</div>
 
-    	<div class="row">
-            <div class="col-md-12 sub-heading">
-    			<h3>How did you do these today?</h3>
-    		</div>
-    	</div>
-    	<div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12 para-option">
-    			<h3>Day's Biggest Challenge</h3>
-    		</div>
-    		<div class="col-md-7 col-sm-12 col-xs-12 input-padding">
-    			<input type="text" class="form-control" id="challenge" ng-model="challenge">
-    		</div>
-    	</div>
-    	<div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12 para-option">
-    			<h3>How I Addressed it</h3>
-    		</div>
-    		<div class="col-md-7 col-sm-12 col-xs-12 input-padding">
-    			<input type="text" class="form-control" id="challenge" ng-model="challenge">
-    		</div>
-    	</div>
-    	<div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12 para-option">
-    			<h3>What I did Really Well Today?</h3>
-    		</div>
-    		<div class="col-md-7 col-sm-12 col-xs-12 input-padding">
-    			<input type="text" class="form-control" id="challenge" ng-model="challenge">
-    		</div>
-    	</div>
-    	<div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12 para-option">
-    			<h3>Reason to Be Grateful</h3>
-    		</div>
-    		<div class="col-md-7 col-sm-12 col-xs-12 input-padding">
-    			<input type="text" class="form-control" id="challenge" ng-model="challenge">
-    		</div>
-    	</div>
-    	<div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">           
-                <div class="panel panel-back noti-box">
-                    <div class="text-box" >
-                        <a class="btn btn-primary btn-lg" ng-click="submitReview()">Submit and Notify Coach</a>
-                    </div>
+            	<div class="row">
+                    <div class="col-md-12 sub-heading">
+            			<h3>How did you do these today?</h3>
+            		</div>
+            	</div>
+            	<div class="row">
+                    <div class="col-md-5 col-sm-12 col-xs-12 para-option">
+            			<h3>Day's Biggest Challenge</h3>
+            		</div>
+            		<div class="col-md-7 col-sm-12 col-xs-12 input-padding">
+            			<input type="text" class="form-control" id="challenge" ng-model="challenge">
+            		</div>
+            	</div>
+            	<div class="row">
+                    <div class="col-md-5 col-sm-12 col-xs-12 para-option">
+            			<h3>How I Addressed it</h3>
+            		</div>
+            		<div class="col-md-7 col-sm-12 col-xs-12 input-padding">
+            			<input type="text" class="form-control" id="challenge" ng-model="challenge">
+            		</div>
+            	</div>
+            	<div class="row">
+                    <div class="col-md-5 col-sm-12 col-xs-12 para-option">
+            			<h3>What I did Really Well Today?</h3>
+            		</div>
+            		<div class="col-md-7 col-sm-12 col-xs-12 input-padding">
+            			<input type="text" class="form-control" id="challenge" ng-model="challenge">
+            		</div>
+            	</div>
+            	<div class="row">
+                    <div class="col-md-5 col-sm-12 col-xs-12 para-option">
+            			<h3>Reason to Be Grateful</h3>
+            		</div>
+            		<div class="col-md-7 col-sm-12 col-xs-12 input-padding">
+            			<input type="text" class="form-control" id="challenge" ng-model="challenge">
+            		</div>
+            	</div>
+            	<div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">           
+                        <div class="panel panel-back noti-box">
+                            <div class="text-box" >
+                                <a class="btn btn-primary btn-lg" ng-click="submitReview()">Submit and Notify Coach</a>
+                            </div>
+                        </div>
+                    </div>                        
                 </div>
-            </div>                        
+            	
+            </div>
         </div>
-    	
-
     </div>
 </div>

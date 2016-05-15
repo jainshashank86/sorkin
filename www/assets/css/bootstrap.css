@@ -3866,9 +3866,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+/*
+  customised
+*/
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 70px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -5498,7 +5502,7 @@ button.close {
   border: 0;
 }
 .modal-open {
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .modal {
   position: fixed;

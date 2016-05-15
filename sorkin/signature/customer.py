@@ -8,6 +8,7 @@ import webapp2
 from google.appengine.api import mail
 from google.appengine.api import app_identity
 import random
+from google.appengine.api import urlfetch
 
 
 
@@ -88,21 +89,18 @@ class CustomerApi(RequestHandler):
 
         logging.info(submission)
 
-
         hash = str(random.getrandbits(32))
-
-        logging.info(hash)
-
-
-        submission['hashKey'] = hash
-
-        submission['authenticated'] = False
-
-        logging.info(submission)
 
         key = ndb.Key(Credentials, username)
         customer = Credentials(key = key)
-        customer.populate(**submission)
+        customer.first_name = submission[u'first_name']
+        customer.password = submission[u'password']
+        customer.email = submission['email']
+        customer.last_name = submission[u'last_name']
+        customer.company = submission['company']
+        customer.role = submission[u'role']
+        customer.hashKey = hash
+        customer.authenticated = False
         customer.put()
 
         sender_address = 'intense-howl-790@appspot.gserviceaccount.com'.format(app_identity.get_application_id())  #'intense-howl-790@appspot.gserviceaccount.com'
@@ -115,7 +113,7 @@ class CustomerApi(RequestHandler):
 
         message.to = submission['email']
 
-        message.body = """Dear Shashank:
+        message.body = """Dear """ + submission[u'first_name'] + """:
 
 
 
@@ -142,10 +140,14 @@ class CustomerAuthenticateApi(RequestHandler):
 
         #submission = self.load()
 
+
+
         logging.info('Inside  verify')
         #logging.info(submission)
 
         key = ndb.Key(Credentials, username)
+
+        #user = Credentials(key = key)
 
         user = key.get()
 
@@ -153,16 +155,16 @@ class CustomerAuthenticateApi(RequestHandler):
             self.error('Invalid user', status = 404)
             return
 
-        logging.info(user)
-        logging.info(user.username)
-        logging.info(user.hashKey)
-
-
         if (user.hashKey == hashkey) :
-            #self.error('Invalid user', status = 404)
             user.authenticated = True
             user.put()
+            self.redirect('/')
+            return
+            #urlfetch.fetch(url='https://localhost:8080/')
 
+        else :
+            self.error('Invalid session', status = 404)
+            return
 
         self.respond(user)
 

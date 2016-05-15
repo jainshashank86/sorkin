@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default navbar-cls-top animated bounceInLeft" role="navigation" style="margin-bottom: 0" ng-show="showWa">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><span class="set-gap">Performance</span><span class="set-gap"> Accelerator</span></a>
+            </div>
+            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#/login" class="btn btn-danger square-btn-adjust" ng-click="logout()">Logout</a> </div>
+        </nav>
+           <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side " role="navigation" ng-show="showWa">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+				    <li class="text-center fade-in five">
+                        <img src="assets/img/find_user.png" class="user-image img-responsive"/>
+					</li>
+
+
+                    <li class="animated bounceInLeft" id="opt1">
+                        <a class="active-menu" href="#/home" id="optHome"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                    </li>
+					<li class="animated bounceInLeft" id="opt2">
+                        <a href="#/reports" id="optReport"><i class="fa fa-bar-chart-o fa-3x"></i> Reports</a>
+                    </li>
+                    <li class="animated bounceInLeft" id="opt3">
+                        <a class="animated bounceInLeft" href="#/settings" id="optSettings"><i class="fa fa-desktop fa-3x"></i> Settings</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>

@@ -10,24 +10,9 @@ handlers:
 - url: /a/.*
   script: sorkin.signature.api.wsgi
 
-- url: /cron/.*
-  script: sorkin.signature.cron.wsgi
-  login: admin
-
-- url: /setup
-  static_files: www/setup.html
-  upload: www/setup.html
-  login: required
-
-- url: /panel(/.*)?
-  static_files: www/panel.html
-  upload: www/panel.html
-  login: required
-
 - url: /
   static_files: www/index.html
   upload: www/index.html
-
 
 - url: /
   static_dir: www

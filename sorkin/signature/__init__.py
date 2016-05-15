@@ -7,10 +7,12 @@ import httplib2
 
 class Credentials(ndb.Model):
 
-    username = ndb.StringProperty(required = True)
     password = ndb.StringProperty(required = True)
     created = ndb.DateTimeProperty(auto_now_add = True)
     first_name =  ndb.StringProperty(required = True)
+    last_name =  ndb.StringProperty(required = True)
+    company =  ndb.StringProperty(required = True)
+    role =  ndb.StringProperty(required = True)
     hashKey =  ndb.StringProperty()
     authenticated = ndb.BooleanProperty()
     email = ndb.StringProperty(required = True)
