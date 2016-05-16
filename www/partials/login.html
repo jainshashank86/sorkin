@@ -1,7 +1,8 @@
 <nav class="navbar navbar-default navbar-cls-top" role="navigation" style="margin-bottom: 0">
 	<div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">
 		<!-- <a href="#/login" class="btn btn-danger square-btn-adjust" ng-click="logout()" data-target="#myModal">Login</a> -->
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Login</button>
+		<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Login</button> -->
+		<a class="btn btn-danger square-btn-adjust" data-toggle="modal" data-target="#myModal">Login</a>
 	</div>
 </nav>
 
@@ -38,6 +39,10 @@
 				    <button ng-click="saveUser()">create</button>
 				    <p class="message">Already registered? <a >Sign In</a></p>
 				  </form>
+				  <div class="notification-login" ng-show="shownoti">
+				  	<span class="set-gap"><h3>Thank you {{fname}}</h3></span>
+				  	<span class="set-gap"><p>Please check your {{email}} to continue</p></span>
+				  </div>
 				  <form class="login-form" ng-show="!showsignup">
 				    <input type="text" class="textbox" id="login" placeholder="username" ng-model="username"/>
 				    <input type="password" class="textbox" id="pass" placeholder="password" ng-model="password"/>

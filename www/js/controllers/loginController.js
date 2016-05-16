@@ -3,6 +3,7 @@ var performAccel = angular.module('performAccel');
 performAccel.controller('loginCtrl', function ($scope, $location, $http) {
 	$scope.activate = true;
 	$scope.showsignup = false;
+	$scope.shownoti = false;
 	// to do stuff
 	$('.message a').click(function(){
 	   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
@@ -25,6 +26,7 @@ performAccel.controller('loginCtrl', function ($scope, $location, $http) {
 
 	$scope.signup = function() {
 		$scope.showsignup = true;
+		$scope.shownoti = true;
 		console.log('Signup page')
 
 
